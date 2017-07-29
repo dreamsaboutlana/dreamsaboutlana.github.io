@@ -18,6 +18,6 @@ class Api {
       })
   }
 }
-const api = new Api('http://easycode-js.herokuapp.com/dreamsaboutlana/users');
+// const api = new Api('http://easycode-js.herokuapp.com/dreamsaboutlana/users');
 // const api = new Api(url + 'user');
-console.log(api.requestUser());
+// console.log(api.requestUser());
