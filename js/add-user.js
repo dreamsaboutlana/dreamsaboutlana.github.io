@@ -106,7 +106,7 @@ class AddUser {
     //add new user 
     this.done.addEventListener('click', e => {
 
-      const url = 'http://easycode-js.herokuapp.com/dreamsaboutlana/users';
+      const url = 'https://easycode-js.herokuapp.com/dreamsaboutlana/users';
 
       this.inputs.forEach(elem => {
         let param = elem.id;

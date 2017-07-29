@@ -152,7 +152,7 @@ class App {
   }
 //TODO add to API
   request() {
-    const url = 'http://easycode-js.herokuapp.com/dreamsaboutlana/users';
+    const url = 'https://easycode-js.herokuapp.com/dreamsaboutlana/users';
 
     fetch(url).then(data => data.json()).then(data => {
       this.users = data;

@@ -101,7 +101,7 @@ class EditContact {
     //delete  contact
     this.deleteContact.addEventListener('click', e => {
       e.preventDefault();
-      const url = 'http://easycode-js.herokuapp.com/dreamsaboutlana/users';
+      const url = 'https://easycode-js.herokuapp.com/dreamsaboutlana/users';
 
       fetch(`${url}/${this.user._id}`, {
           method: "DELETE",
@@ -124,7 +124,7 @@ class EditContact {
     this.done.addEventListener('click', e => {
       e.preventDefault();
 
-      const url = 'http://easycode-js.herokuapp.com/dreamsaboutlana/users';
+      const url = 'https://easycode-js.herokuapp.com/dreamsaboutlana/users';
 
       let inputs = [...this.main.getElementsByTagName('input')];
       inputs.forEach(elem => {
