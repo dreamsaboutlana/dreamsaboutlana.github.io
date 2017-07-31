@@ -47,7 +47,6 @@ class EditContact {
                   <input type="text" class="delete-btn" id="${elem}" value ="${this.user[elem]}" disabled>
                 </div>`;
       } else {
-        console.log(elem);
         return `<div class="edit-field">
                   <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
                   <label class="sr-only" for="${elem}">${elem}</label>
@@ -102,7 +101,8 @@ class EditContact {
     this.deleteContact.addEventListener('click', e => {
       e.preventDefault();
       const url = 'https://easycode-js.herokuapp.com/dreamsaboutlana/users';
-
+      
+      //TODO add api() delete
       fetch(`${url}/${this.user._id}`, {
           method: "DELETE",
           headers: { "Content-Type": "application/json" },
@@ -138,7 +138,7 @@ class EditContact {
         delete this.newUser.name;
         delete this.newUser.lastname;
       };
-
+      //TODO chanche request for api.js
       fetch(`${url}/${this.user._id}`, {
           method: "PATCH",
           body: JSON.stringify(this.newUser),

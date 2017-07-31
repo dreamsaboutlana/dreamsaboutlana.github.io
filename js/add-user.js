@@ -132,6 +132,9 @@ class AddUser {
         .then(data => {
           myPhoneBook.request();
         })
+      // let api = new Api();
+      // console.log(api);
+    // api.postUser();
 
     });
     // back to indexPage 

@@ -2,7 +2,12 @@
 
 class App {
 
-  constructor() {}
+  constructor() {
+    // this.ui = {
+    //   api: new Api(),
+    //   keypad: new Keypad()
+    // }
+  }
 
   createHeader() {
     return `<header class="header">
@@ -150,14 +155,18 @@ class App {
       myUser.render();
     });
   }
-//TODO add to API
+  //TODO add to API
   request() {
     const url = 'https://easycode-js.herokuapp.com/dreamsaboutlana/users';
+    // let api = new Api();
+    // console.log(ui.api);
 
-    fetch(url).then(data => data.json()).then(data => {
-      this.users = data;
-      this.render();
-    })
+    fetch(url)
+      .then(data => data.json())
+      .then(data => {
+        this.users = data;
+        this.render();
+      })
   }
 
   render() {
@@ -178,13 +187,10 @@ class App {
 let myPhoneBook = new App();
 myPhoneBook.request();
 
-
-
 //router
 let links = [...document.querySelectorAll('.main-nav>a')];
 
 links.forEach(link => {
-  // console.log(link);
   link.addEventListener('click', event => {
     event.preventDefault();
     let href = link.href;
@@ -209,9 +215,4 @@ links.forEach(link => {
     }
   })
 
-})
-
-
-window.addEventListener('popstate', function(event) {
-  console.log(event);
 })
