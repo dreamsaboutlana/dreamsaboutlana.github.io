@@ -193,17 +193,17 @@ let links = [...document.querySelectorAll('.main-nav>a')];
 console.log(links);
 
 links.forEach(link => {
-
-    link.addEventListener('click', event => {
-        event.preventDefault();
+ let href = link.getAttribute('href');
+    link.addEventListener('click', e => {
+        e.preventDefault();
         let href = link.href;
-        console.log(href);
+        // console.log(href);
         this.state = this.app.innerHTML;
-        updateState(href);
-        links.forEach(elem => {
-            elem.classList.remove('active');
-        });
-            history.pushState(this.state, href, href);
+        // updateState(this.state);
+        // links.forEach(elem => {
+        //     elem.classList.remove('active');
+        // });
+            history.pushState(href, href, href);
 
         // // index
         // if (link.getAttribute('href') === 'index.html') {
