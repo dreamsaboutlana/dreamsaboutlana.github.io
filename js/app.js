@@ -202,22 +202,22 @@ links.forEach(link => {
 
         // index
         if (link.getAttribute('href') === 'index.html') {
-            console.log(state);
+            // console.log(state);
             myPhoneBook.render();
             history.pushState(this.state, href, href);
         }
 
         //keypad
         if (link.getAttribute('href') === 'keypad.html') {
-            console.log('keypad', state);
+            // console.log('keypad', state);
             myKeypad.render();
-            history.pushState(href, href, href);
-            // history.pushState(this.state, href, href);
+            // history.pushState(href, href, href);
+            history.pushState(this.state, href, href);
         }
 
         // addUser
         if (link.getAttribute('href') === 'add-user.html') {
-            console.log('add', state);
+            // console.log('add', state);
             myAddUser.render();
             history.pushState(this.state, href, href);
         }
