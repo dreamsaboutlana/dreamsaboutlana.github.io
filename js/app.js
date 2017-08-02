@@ -190,6 +190,8 @@ myPhoneBook.request();
 //router
 let links = [...document.querySelectorAll('.main-nav>a')];
 
+// console.log(links);
+
 links.forEach(link => {
     link.addEventListener('click', event => {
         event.preventDefault();
