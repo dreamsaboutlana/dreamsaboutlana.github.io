@@ -190,46 +190,41 @@ myPhoneBook.request();
 //router
 let links = [...document.querySelectorAll('.main-nav>a')];
 
-console.log(links);
-
 links.forEach(link => {
- let href = link.getAttribute('href');
+
     link.addEventListener('click', e => {
         e.preventDefault();
         let href = link.href;
-        // console.log(href);
         this.state = this.app.innerHTML;
-        // updateState(this.state);
-        // links.forEach(elem => {
-        //     elem.classList.remove('active');
-        // });
+        links.forEach(elem => {
+            elem.classList.remove('active');
+        });
+
+        // index
+        if (link.getAttribute('href') === 'index.html') {
+            console.log(state);
+            myPhoneBook.render();
+            history.pushState(this.state, href, href);
+        }
+
+        //keypad
+        if (link.getAttribute('href') === 'keypad.html') {
+            console.log('keypad', state);
+            myKeypad.render();
             history.pushState(href, href, href);
+            // history.pushState(this.state, href, href);
+        }
 
-        // // index
-        // if (link.getAttribute('href') === 'index.html') {
-        //   console.log(state);
-        //     myPhoneBook.render();
-        //     history.pushState(this.state, href, href);
-        // }
-
-        // //keypad
-        // if (link.getAttribute('href') === 'keypad.html') {
-        //   console.log('keypad', state);
-        //     myKeypad.render();
-        //     // history.pushState(href, href, href);
-        //     history.pushState(this.state, href, href);
-        // }
-
-        // // addUser
-        // if (link.getAttribute('href') === 'add-user.html') {
-        //   console.log('add', state);
-        //     myAddUser.render();
-        //     history.pushState(this.state, href, href);
-        // }
+        // addUser
+        if (link.getAttribute('href') === 'add-user.html') {
+            console.log('add', state);
+            myAddUser.render();
+            history.pushState(this.state, href, href);
+        }
     })
 
 })
 
-window.addEventListener('popstate', function(event) {
-    console.log(event);
+window.addEventListener('popstate', function(e) {
+    console.log(e);
 })
