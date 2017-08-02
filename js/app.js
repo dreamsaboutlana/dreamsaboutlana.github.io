@@ -190,7 +190,7 @@ myPhoneBook.request();
 //router
 let links = [...document.querySelectorAll('.main-nav>a')];
 
-// console.log(links);
+console.log(links);
 
 links.forEach(link => {
     link.addEventListener('click', event => {
@@ -203,18 +203,21 @@ links.forEach(link => {
 
         // index
         if (link.getAttribute('href') === 'index.html') {
+          console.log(state);
             myPhoneBook.render();
             history.pushState(this.state, href, href);
         }
 
         //keypad
         if (link.getAttribute('href') === 'keypad.html') {
+          console.log(state);
             myKeypad.render();
             history.pushState(this.state, href, href);
         }
 
         // addUser
         if (link.getAttribute('href') === 'add-user.html') {
+          console.log(state);
             myAddUser.render();
             history.pushState(this.state, href, href);
         }
