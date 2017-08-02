@@ -211,7 +211,6 @@ links.forEach(link => {
         if (link.getAttribute('href') === 'keypad.html') {
             // console.log('keypad', state);
             myKeypad.render();
-            // history.pushState(href, href, href);
             history.pushState(this.state, href, href);
         }
 
