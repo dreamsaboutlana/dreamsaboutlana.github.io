@@ -193,35 +193,39 @@ let links = [...document.querySelectorAll('.main-nav>a')];
 console.log(links);
 
 links.forEach(link => {
+
     link.addEventListener('click', event => {
         event.preventDefault();
         let href = link.href;
+        console.log(href);
         this.state = this.app.innerHTML;
+        updateState(href);
         links.forEach(elem => {
             elem.classList.remove('active');
         });
-
-        // index
-        if (link.getAttribute('href') === 'index.html') {
-          console.log(state);
-            myPhoneBook.render();
             history.pushState(this.state, href, href);
-        }
 
-        //keypad
-        if (link.getAttribute('href') === 'keypad.html') {
-          console.log('keypad',state);
-            myKeypad.render();
-            history.pushState(href, href, href);
-            // history.pushState(this.state, href, href);
-        }
+        // // index
+        // if (link.getAttribute('href') === 'index.html') {
+        //   console.log(state);
+        //     myPhoneBook.render();
+        //     history.pushState(this.state, href, href);
+        // }
 
-        // addUser
-        if (link.getAttribute('href') === 'add-user.html') {
-          console.log('add', state);
-            myAddUser.render();
-            history.pushState(this.state, href, href);
-        }
+        // //keypad
+        // if (link.getAttribute('href') === 'keypad.html') {
+        //   console.log('keypad', state);
+        //     myKeypad.render();
+        //     // history.pushState(href, href, href);
+        //     history.pushState(this.state, href, href);
+        // }
+
+        // // addUser
+        // if (link.getAttribute('href') === 'add-user.html') {
+        //   console.log('add', state);
+        //     myAddUser.render();
+        //     history.pushState(this.state, href, href);
+        // }
     })
 
 })
