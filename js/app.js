@@ -210,14 +210,14 @@ links.forEach(link => {
 
         //keypad
         if (link.getAttribute('href') === 'keypad.html') {
-          console.log(state);
+          console.log('keypad',state);
             myKeypad.render();
             history.pushState(this.state, href, href);
         }
 
         // addUser
         if (link.getAttribute('href') === 'add-user.html') {
-          console.log(state);
+          console.log('add', state);
             myAddUser.render();
             history.pushState(this.state, href, href);
         }
