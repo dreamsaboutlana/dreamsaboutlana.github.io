@@ -20,10 +20,9 @@ class Builder {
 
     validateEmail(email) {
         if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-            return (true)
+            return (true);
         }
-        alert("You have entered an invalid email address!")
-        return (false)
+        return (false);
     }
 
     createUser() {
@@ -35,9 +34,8 @@ class Builder {
             this.email = document.getElementById('email').value;
             this.role = document.getElementById('formRole');
             this.roleVal = this.role.options[this.role.selectedIndex].text;
-            this.validateEmail(this.email);
             if (!this.name) throw 'Name couldn\'t be empty!';
-            if (!this.email) throw 'Email couldn\'t be empty!';
+            if (!this.validateEmail(this.email)) throw 'Email couldn\'t be empty!';
             if (!this.roleVal) throw 'Role couldn\'t be empty!';
 
             e.preventDefault();
@@ -137,6 +135,5 @@ try {
     const app = new Builder();
 
 } catch (e) {
-
-    console.log(e);
+    alert(e);
 }
